@@ -3,7 +3,7 @@ class AppDelegate
 
      @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
 
-     @window.rootViewController = FizzBuzzViewController.alloc.init
+     @window.rootViewController = GoldilocksViewController.alloc.init
 
      @window.makeKeyAndVisible
 
