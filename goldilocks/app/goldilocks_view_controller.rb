@@ -20,3 +20,23 @@ class GoldilocksViewController < UIViewController
     comfort_edge_button.addTarget(self, action:'comfortEdgeTapped:', forControlEvents:UIControlEventTouchUpInside)
     comfort_button.addTarget(self, action:'comfortTapped:', forControlEvents:UIControlEventTouchUpInside)
   end
+
+  def panicTapped(sender)
+
+  end
+
+  def panicEdgeTapped(sender)
+
+  end
+
+  def learningTapped(sender)
+
+  end
+
+  def comfortEdgeTapped(sender)
+
+  end
+
+  def comfortTapped(sender)
+
+  end
