@@ -1,4 +1,10 @@
 source 'https://rubygems.org'
 
+# gem 'rubygems'
 gem 'rake'
 # Add your dependencies here:
+# gem 'ib'
+
+gem 'guard'
+gem 'guard-test'
+gem 'motion-dtrace'
