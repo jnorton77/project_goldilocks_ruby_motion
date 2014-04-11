@@ -14,3 +14,4 @@ Motion::Project::App.setup do |app|
 end
 
 require 'bubble-wrap'
+require 'teacup'

@@ -3,6 +3,7 @@ GEM
   specs:
     bubble-wrap (1.5.0)
     rake (10.2.2)
+    teacup (2.1.13)
 
 PLATFORMS
   ruby
@@ -10,3 +11,4 @@ PLATFORMS
 DEPENDENCIES
   bubble-wrap
   rake
+  teacup
