@@ -19,7 +19,7 @@ class AddZaggleForm < PM::FormotionScreen #2PM::WebScreen #FormotionScreen #PM::
 	#Formotion comes with Bubble wrap?
 	# App.alert("message") COMES FROM BUBBLE WRAP
 
-		[['Title', :title], ['Content', :content]].each do |field|
+		[['Name', :title], ['Email', :content]].each do |field|
 			# if data[field[1]].length < 20
 			# 	App.alert("#{field[0]} is too long")
 			# 	return
@@ -50,12 +50,12 @@ class AddZaggleForm < PM::FormotionScreen #2PM::WebScreen #FormotionScreen #PM::
 		{
 			sections: [{
 				rows: [{
-					title: "Title",
+					title: "Name",
 					key: :title, #how we access the attribute when we get the form data
 					placeholder: "Enter your name",
 					type: :string
 				}, {
-					title: "Content",
+					title: "Email",
 					key: :content,
 					placeholder: "your_email@email.com",
 					type: :string
