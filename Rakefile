@@ -1,6 +1,11 @@
 # -*- coding: utf-8 -*-
 $:.unshift("/Library/RubyMotion/lib")
 require 'motion/project/template/ios'
+require 'formotion'
+
+
+# require 'bundler'
+# Bundler.require
 
 begin
   require 'bundler'
@@ -10,8 +15,5 @@ end
 
 Motion::Project::App.setup do |app|
   # Use `rake config' to see complete project settings.
-  app.name = 'button'
+  app.name = 'promotion'
 end
-
-require 'bubble-wrap'
-require 'teacup'

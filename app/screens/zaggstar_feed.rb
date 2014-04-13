@@ -1,16 +1,73 @@
-class ZoneController < UIViewController
+class ZaggstarFeed < PM::Screen
 
-  def init
-    if super
-      self.tabBarItem = UITabBarItem.alloc.initWithTitle('Zone', image:nil, tag:1)
-    end
-    self
+  title "Equanimity"
+
+
+  # searchable placeholder: "Find a Zaggle"
+  # refreshable callback: :on_refresh,
+  #             pull_message: "Pull to resfresh",
+  #             refreshing: "Refresing data…",
+  #             updated_format: "Last updated at %s",
+  #             updated_time_format: "%l:%M %p"
+
+
+
+  def on_load
+      set_nav_bar_button :left, title: "D3 View", action: :open_help_screen
+      # Add an add button on the top right navbar
+      set_nav_bar_button :right, system_item: :add, action: :open_add_zaggle_form
   end
+
+  #open modal with
+  def will_appear
+    # update_table_data
+
+    set_attributes self.view, {
+      background_color: hex_color("#FFFFFF")
+    }
+  end
+
+  def open_help_screen
+      # open_modal HelpScreen.new(nav_bar: true)
+      open HelpScreen.new(nav_bar: true)
+
+  end
+
+#zaggle unique information
+
+  def open_add_zaggle_form
+    # open_modal AddZaggleForm.new(nav_bar: true)
+    open AddZaggleForm.new(nav_bar: true)
+  end
+
+  def open_zaggle(args)
+    open ZaggleScreen.new(zaggle_id: args[:zaggle_id])
+  end
+
+  def table_data
+    [{
+      cells: app_delegate.zaggles.map do [zaggle]
+        {
+          title: zaggle[:title],
+          subtitle: zaggle[:content],
+          action: :open_zaggle,
+          editing_style: :delete,
+          arguments: {zaggle_id: app_delegate.zaggles.index(zaggle) }
+        }
+      end
+      }]
+  end
+
+
+  def on_refresh
+    end_refreshing
+  end
+
 
   def viewDidLoad
     super
-    right_button = UIBarButtonItem.alloc.initWithTitle("About Us", style: UIBarButtonItemStyleBordered, target:self, action:'push')
-    self.navigationItem.rightBarButtonItem = right_button
+    # right_button = UIBarButtonItem.alloc.initWithTitle("About Us", style: UIBarButtonItemStyleBordered, target:self, action:'push')
+    # self.navigationItem.rightBarButtonItem = right_button
 
     #panic button
     @panicButton = UIButton.alloc.initWithFrame(CGRectMake(20, 100, 280, 50))
@@ -48,10 +105,10 @@ class ZoneController < UIViewController
     self.view.addSubview(@comfortButton)
   end
 
-  def push
-    new_controller = ZoneController.alloc.initWithNibName(nil, bundle: nil)
-    self.navigationController.pushViewController(new_controller, animated: true)
-  end
+  # def push
+  #   new_controller = ZoneController.alloc.initWithNibName(nil, bundle: nil)
+  #   self.navigationController.pushViewController(new_controller, animated: true)
+  # end
 
   def panic_tapped
 
@@ -115,4 +172,21 @@ class ZoneController < UIViewController
       end
     end
   end
+
+
+
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
