@@ -9,7 +9,6 @@ class ZoneController < UIViewController
 
   def viewDidLoad
     super
-
     right_button = UIBarButtonItem.alloc.initWithTitle("About Us", style: UIBarButtonItemStyleBordered, target:self, action:'push')
     self.navigationItem.rightBarButtonItem = right_button
 
@@ -59,13 +58,8 @@ class ZoneController < UIViewController
     data = {answer: "panic"}
 
     BubbleWrap::HTTP.post("http://dbcgoldilocks.herokuapp.com/users/m/:id/responses", {payload: data}) do |response|
-      puts "response = #{response}"
-      puts "response.body = #{response.body.to_str rescue ''}"
-      puts "response.error_message = #{response.error_message}"
-      puts "response.status_code = #{response.status_code.to_s rescue ''}"
-      puts "response ok = #{response.ok?}"
-
       if response.ok?
+        # message = ["Hey Dan, Shut the fuck up.", "Ian, you're a real cunt.", "John. Please. Fist yourself. Please.", "Devin. Suicide?"].sample
         App.alert("response was ok!")
       else
          App.alert("Fail")
