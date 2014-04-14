@@ -1,13 +1,15 @@
 class AddZaggleForm < PM::FormotionScreen #2PM::WebScreen #FormotionScreen #PM::Screen #PM::FormotionScreen
 
-	title "Create an Account"
+	title "Tag Your Response!"
 
 #As soon as you create a modal, think about how you are going to close it.
 	def on_load
+		 # set_nav_bar_button :left, title: "D3 View", action: :open_help_screen
+		 # set_nav_bar_button :right, title: "Responses", action: :zaggstar_feed
 		set_nav_bar_button :left, title: "Cancel", action: :close_screen
     	# self.view.backgroundColor = UIColor.whiteColor
-
 	end
+
 
 
 	#Now to wire up the backend we use an on_submit method:
@@ -62,7 +64,7 @@ class AddZaggleForm < PM::FormotionScreen #2PM::WebScreen #FormotionScreen #PM::
 				 }]
 			}, {
 				rows: [{
-					title: "Publish",
+					title: "Tag my response!",
 					type: :submit,
 
 				}]

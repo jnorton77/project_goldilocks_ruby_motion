@@ -14,7 +14,7 @@ class HelpScreen < PM::WebScreen
 #tell webscreen what we want our content to be
   def content
     #return an NSURL
-    NSURL.URLWithString('http://dbcgoldilocks.herokuapp.com')
+    NSURL.URLWithString('http://equanimity.herokuapp.com')
   end
 
 #let webscreen know what it should do when the load fails
